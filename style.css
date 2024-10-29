@@ -37,10 +37,7 @@ a {
     max-width: 80px; /* Ajuste para pantallas pequeñas */
 }
 
-.cabecera__titulo {
-    font-size: 1.2rem;
-    text-align: center;
-}
+
 
 .navegacion__lista {
     display: none;
