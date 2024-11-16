@@ -1,51 +1,146 @@
-/* Este repositório base fué creado para ayudarte en caso que no sepas como comenzar, recuerda que el portafolio es tu carta de presentación y debes darle tu cara, por eso te invitamos a personalizarlo según tu estilo y preferencias no te limites apenas al layout propuesto en figma  
-*/
 :root {
     --color-de-fondo: #F5F5F5;
+    /* Color de fondo general */
     --color-de-fondo-menu: #ffffff;
+    /* Color de fondo del menú */
     --color-de-link: #000000;
+    /* Color de los enlaces */
 }
+
+
 
 body {
-    background-color: var(--color-de-fondo);
-    font-family: 'Raleway', sans-serif;
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0;
-    line-height: 1.6;
+    background-color: var(--color-de-fondo); /* Aplicar color de fondo al cuerpo */
+    font-family: 'Raleway', sans-serif; /* Fuente utilizada */
+    margin: 0;  /* Eliminar márgenes predeterminados */
+    box-sizing: border-box; /* Incluir padding y border en el tamaño total de los elementos */
+    padding: 0;/* Eliminar padding predeterminado */
+    line-height: 1.6;/* Altura de línea para mejor legibilidad */
+    max-width: 100%; /* Limita el ancho para evitar desbordamiento */
+   
 }
 
-ol, ul, li {
+/* Elimina estilos predeterminados de listas en ol, ul y li */
+ol,
+ul,
+li {
     list-style: none;
+    /* Quitar estilo de lista */
 }
 
+/* Quita el subrayado en los enlaces y asigna el color */
 a {
     text-decoration: none;
+    /* Sin subrayado */
     color: var(--color-de-link);
+    /* Color de los enlaces */
+}
+
+img {
+    max-width: 100%; /* Asegura que las imágenes no se desborden */
+    height: auto; /* Mantiene la proporción de la imagen */
 }
 
 /* ------------------------------ Sección Menú -------------------------------*/
-.cabecera {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    background-color: var(--color-de-fondo-menu);
+
+/* Header principal (diseñado para pantallas móviles) */
+@media (max-width: 768px) {
+    
+    
+
+    .cabecera {
+        display: flex; /* Flexbox para organizar elementos en fila */
+        justify-content: space-between; /* Espacio entre logo y botón */
+        align-items: center; /* Centra los elementos verticalmente */
+        height: 80px; /* Altura de la cabecera */
+        padding: 0 1rem; /* Espaciado en los laterales */
+        background-color: var(--color-de-fondo-menu); /* Color de fondo */
+    }
+
+     
+
+    /* Estilos para el logo de la cabecera */
+    .cabecera__logo {
+        width: auto; /* Ajuste automático del ancho */
+        max-height: 55px; /* Altura máxima del logo */
+        margin: 0; /* Sin márgenes */
+        padding: 0; /* Sin padding */
+        border: none; /* Sin bordes */
+    }
+  /* Estilos para el botón del dropdown */
+    .dropdown-toggle {
+        width: auto;
+        height: 44px;
+        background: none; /* Sin fondo */
+        border: none; /* Sin borde */
+        font-size: 1.5rem; /* Tamaño de fuente para el icono */
+        cursor: pointer; /* Cambia el cursor a pointer */
+        margin: 0; /* Sin márgenes */
+        margin-left: auto;/* Mueve el botón hacia la derecha */
+    }
+
+}
+/* Estilos del contenido del menú desplegable dropdown*/
+.dropdown-content {
+    border: none; /* Sin bordes */
+    box-shadow: none; /* Sin sombra */
+    
+
+}
+    /* Menu del dropdown--oculta por defecto */
+    .navegacion__lista {
+      
+        position: fixed; /* Fijar el menú a la pantalla */
+        top: 0; /* Alinear al borde superior */
+        left: -100vw; /* Inicialmente fuera de la pantalla, usando viewport */
+        width: 0; /* Comienza con ancho cero para el efecto */
+        height: 100vh; /* Ocupa toda la altura de la pantalla */
+        background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco semitransparente */
+        overflow-x: hidden; /* Oculta el contenido horizontalmente mientras está oculto */
+        transition: left 0.5s ease, width 0.5s ease; /* Animación para que se expanda lateralmente */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Alineación de los elementos desde la parte superior y a la izquierda*/
+        padding: 20px; /* Separación de los elementos del borde */
+        z-index: 1000; /* Asegurar que esté encima de otros elementos */
+   
+           
+    }
+
+    /* Clase para mostrar el menú desplegable cuando está activo */
+.navegacion__lista.show {
+    left: 0;  /* Mueve el menú a la vista */
+    width: 100%; /* El menú ocupa todo el ancho de la pantalla */
+     
+      
 }
 
-.cabecera__logo {
-    max-width: 80px; /* Ajuste para pantallas pequeñas */
+   /* Estilos para los enlaces dentro de la lista de navegación */
+    .navegacion__elemento a {
+        
+        font-size: 1.2rem; /* Aumenta el tamaño del texto */
+        color: #333; /* Cambia el color del texto */
+        padding: 1rem 0; /* Espaciado entre los enlaces */
+        text-align: center; /* Centra el texto de los enlaces */
+        width: 100%; /* Abarca todo el ancho del menú desplegable */
+        transition: color 0.3s ease, background-color 0.3s ease; /* Transiciones */
+        margin:  1rem; /* Agregar margen al contenedor de la lista */
+    }
+    .navegacion__elemento a:hover {
+        color: #1a5319; /* Color del texto al pasar el cursor */
+        background-color: #d6efd8; /* Fondo al pasar el cursor */
+        border-radius: 5px; /* Opcional: bordes redondeados */
+           
+}
+
+/* Espaciado entre el icono y el nombre (ajustable) */
+.navegacion__elemento i {
+    margin-right: 10px; /* Añadir separación entre el icono y el texto */
+    /* Ajuste manual: puedes modificar 10px para más o menos espacio entre icono y texto */
 }
 
 
 
-.navegacion__lista {
-    display: none;
-}
-
-.navegacion__elemento a {
-    font-size: 0.9rem;
-}
 /* ------------------------------ Sección Presentación ------------------------------*/
 
 
@@ -96,6 +191,7 @@ a {
 
 /* Pantallas grandes */
 @media (min-width: 1024px) {
+
     /* Aquí puedes ajustar aún más el diseño para pantallas grandes */
     .cabecera__titulo {
         font-size: 1.8rem;
