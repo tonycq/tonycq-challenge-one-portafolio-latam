@@ -99,7 +99,7 @@ img {
         overflow-x: hidden; /* Oculta el contenido horizontalmente mientras está oculto */
         transition: left 0.5s ease, width 0.5s ease; /* Animación para que se expanda lateralmente */
         display: flex;
-        flex-direction: column;
+        flex-direction: column; /* Los elementos se alinean en columna */
         justify-content: flex-start; /* Alineación de los elementos desde la parte superior y a la izquierda*/
         padding: 20px; /* Separación de los elementos del borde */
         z-index: 1000; /* Asegurar que esté encima de otros elementos */
@@ -123,8 +123,11 @@ img {
         padding: 1rem 0; /* Espaciado entre los enlaces */
         text-align: center; /* Centra el texto de los enlaces */
         width: 100%; /* Abarca todo el ancho del menú desplegable */
-        transition: color 0.3s ease, background-color 0.3s ease; /* Transiciones */
-        margin:  1rem; /* Agregar margen al contenedor de la lista */
+        display: flex; /* Usar flexbox para alinear el icono y el texto */
+        align-items: center; /* Centrar verticalmente los elementos */
+        gap: 20px; /* Espaciado ajustable entre el icono y el texto de forma manual*/
+        line-height: 2rem; /* Espacio interlineal (ajustable) */
+        box-sizing: border-box; /* Asegura que padding no afecte el tamaño total */
     }
     .navegacion__elemento a:hover {
         color: #1a5319; /* Color del texto al pasar el cursor */
