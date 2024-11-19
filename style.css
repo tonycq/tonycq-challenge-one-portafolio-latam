@@ -111,7 +111,10 @@ img {
 .navegacion__lista.show {
     left: 0;  /* Mueve el menú a la vista */
     width: 100%; /* El menú ocupa todo el ancho de la pantalla */
-     
+    top: 0; /* Asegurarse de que empieza desde el borde superior */
+    height: 100vh; /* Altura total de la ventana */
+    margin: 0; /* Eliminar márgenes superiores o inferiores */
+    padding: 20px; /* Mantener el espaciado interno */
       
 }
 
@@ -120,13 +123,13 @@ img {
         
         font-size: 1.2rem; /* Aumenta el tamaño del texto */
         color: #333; /* Cambia el color del texto */
-        padding: 1rem 0; /* Espaciado entre los enlaces */
-        text-align: center; /* Centra el texto de los enlaces */
         width: 100%; /* Abarca todo el ancho del menú desplegable */
         display: flex; /* Usar flexbox para alinear el icono y el texto */
         align-items: center; /* Centrar verticalmente los elementos */
-        gap: 20px; /* Espaciado ajustable entre el icono y el texto de forma manual*/
-        line-height: 2rem; /* Espacio interlineal (ajustable) */
+        justify-content: flex-start; /* Asegura que el texto e icono estén alineados a la izquierda */
+        padding: 1rem 20px; /* Espaciado interno (vertical y horizontal) */
+        gap: 20px; /* Espaciado ajustable entre el icono y el texto */
+        line-height: normal; /* Resetea line-height para usar el de flexbox */
         box-sizing: border-box; /* Asegura que padding no afecte el tamaño total */
     }
     .navegacion__elemento a:hover {
@@ -138,8 +141,11 @@ img {
 
 /* Espaciado entre el icono y el nombre (ajustable) */
 .navegacion__elemento i {
-    margin-right: 10px; /* Añadir separación entre el icono y el texto */
-    /* Ajuste manual: puedes modificar 10px para más o menos espacio entre icono y texto */
+    width: 24px; /* Ancho uniforme para todos los iconos */
+    height: 20px; /* Alto uniforme para todos los iconos */
+    display: inline-block; /* Asegura que se respete el ancho y alto */
+    text-align: center; /* Centra el contenido del icono */
+    line-height: 20px; /* Centra verticalmente el ícono dentro del contenedor */
 }
 
 
