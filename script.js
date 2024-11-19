@@ -23,3 +23,21 @@ dropdownButton.addEventListener('click',toggleDropdown);
 
 // Añadir el evento de click al botón "Salir"
 salirButton.addEventListener('click', closeDropdown);
+
+
+
+// Selecciona todos los enlaces y el botón del menú
+const items = document.querySelectorAll('.navegacion__elemento a, .navegacion__elemento button');
+
+// Añade un evento de clic a cada elemento (enlace o botón)
+items.forEach((item) => {
+    item.addEventListener('click', (event) => {
+        // Primero, quita el aria-current de todos los elementos
+        items.forEach((otherItem) => {
+            otherItem.removeAttribute('aria-current');
+        });
+
+        // Añade aria-current al elemento que se hizo clic
+        item.setAttribute('aria-current', 'page');
+    });
+});

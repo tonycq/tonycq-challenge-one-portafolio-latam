@@ -147,6 +147,30 @@ img {
     text-align: center; /* Centra el contenido del icono */
     line-height: 20px; /* Centra verticalmente el ícono dentro del contenedor */
 }
+/* Estilo compartido entre enlaces de navegacion__elemento a  y el botón salir */
+.navegacion__enlace {
+    font-size: 1.2rem; /* Tamaño del texto */
+    color: #333; /* Color del texto */
+    padding: 1rem 0; /* Espaciado */
+    text-align: left; /* Alineación */
+    width: 100%; /* Ocupa todo el ancho */
+    display: flex; /* Alinear icono y texto */
+    align-items: center; /* Centrar elementos verticalmente */
+    gap: 20px; /* Espaciado entre icono y texto */
+    line-height: 2rem; /* Altura de línea */
+    padding-left: 20px; /* Margen izquierdo */
+    cursor: pointer; /* Indica que es interactivo */
+    box-sizing: border-box; /* Padding no afecta tamaño */
+    text-decoration: none; /* Elimina subrayado en enlaces */
+    background: none; /* Sin fondo para el botón */
+    border: none; /* Sin borde para el botón */
+}
+/* estilo del boton salir para que mantenga similitud con navegacion__elemento a:hover */
+.navegacion__enlace:hover {
+    color: #1a5319; /* Color al pasar el cursor */
+    background-color: #d6efd8; /* Fondo al pasar el cursor */
+}
+
 
 
 
