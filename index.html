@@ -19,14 +19,14 @@
 <body>
 
     <!-- Sección de header -->
-    <header class="cabecera">
+    <header id="top" class="cabecera">
         <img class="cabecera__logo" src="assets/logo_ACQ.png" alt="Logo personal">
         <button class="dropdown-toggle" aria-expanded="false" aria-controls="dropdown-content"
-        aria-label="Abrir menú de navegación">☰</button>
+            aria-label="Abrir menú de navegación">☰</button>
         <nav class="navegacion" aria-label="Navegación principal">
             <ul id="dropdown-content" class="dropdown-content navegacion__lista" role="menu">
                 <li class="navegacion__elemento">
-                    <a href="#inicio" role="menuitem" aria-current="page"></a>><i class="fas fa-home"></i>Inicio</a>
+                    <a href="#top" role="menuitem" aria-current="page"><i class="fas fa-home"></i>Inicio</a>
                 </li>
                 <li class="navegacion__elemento">
                     <a href="#sobre-mi" role="menuitem"><i class="fas fa-user"></i>Sobre mi</a>
@@ -58,7 +58,7 @@
                     </button>
                 </li>
             </ul>
-            
+
         </nav>
     </header>
 
@@ -232,18 +232,63 @@
                     <h3>descargar cv</h3>
                 </section>
     </main>
+    <!-- Sección de Footer 
+    <footer class="footer__container">
+        <ul class="navegacion__footer">
+            <li class="navegacion__elemento">
+                <a href="#top" ><i class="fas fa-home"></i>Inicio</a>
+            </li>
+            <li class="navegacion__elemento">
+                <a href="#contacto"><i class="fa-solid fa-envelope"></i>Contacto</a>
+            </li>
+            <li class="navegacion__elemento">
+                <a href="#mi-cv-pdf"><i class="fa-solid fa-file-pdf"></i>Mi CV PDF</a>
+            </li>
+            <li class="navegacion__elemento">
+                <a href="#proyectos"><i class="fas fa-laptop-code"></i>Proyectos</a>
+            </li>
+            <li class="navegacion__elemento">
+                <a href="#sobre-mi"><i class="fas fa-user"></i>Sobre mí</a>
+            </li>
+        </ul>
+    </footer>-->
     <!-- Sección de Footer -->
     <footer class="footer__container">
-        <li class="navegacion__footer">
-        <li class="navegacion__elemento"><a href="#inicio"><i class="fas fa-home"></i>Inicio</a></li>
-        <li class="navegacion__elemento"><a href="#contacto"><i class="fa-solid fa-envelope"></i>Contacto</a>
-        </li>
-        <li class="navegacion__elemento"><a href="#mi-cv-pdf"><i class="fa-solid fa-file-pdf"></i>Mi cv pdf</a>
-        <li class="navegacion__elemento"><a href="#proyectos"><i class="fas fa-laptop-code"></i>
-                Proyectos</a></li>
-        <li class="navegacion__elemento"><a href="#sobre-mi"> <i class="fas fa-user"></i>Sobre mi</a></li>
-        </li>
+        <ul class="footer__navegacion">
+            <li class="footer__elemento">
+                <a href="#top" class="footer__enlace">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li class="footer__elemento">
+                <a href="#contacto" class="footer__enlace">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Contacto</span>
+                </a>
+            </li>
+            <li class="footer__elemento">
+                <a href="#mi-cv-pdf" class="footer__enlace">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span>Mi CV PDF</span>
+                </a>
+            </li>
+            <li class="footer__elemento">
+                <a href="#proyectos" class="footer__enlace">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>Proyectos</span>
+                </a>
+            </li>
+            <li class="footer__elemento">
+                <a href="#sobre-mi" class="footer__enlace">
+                    <i class="fas fa-user"></i>
+                    <span>Sobre mí</span>
+                </a>
+            </li>
+        </ul>
     </footer>
+
+
 </body>
 <script src="script.js"></script>
 

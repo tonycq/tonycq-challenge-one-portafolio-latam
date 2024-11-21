@@ -170,8 +170,70 @@ img {
     color: #1a5319; /* Color al pasar el cursor */
     background-color: #d6efd8; /* Fondo al pasar el cursor */
 }
+/* ------------------------------ Sección Footer ------------------------------*/
 
+.footer__container {
+    position: fixed; /* Fijar el footer en la parte inferior */
+    bottom: 0; /* Alinear al borde inferior de la página */
+    left: 0; /* Alinear al borde izquierdo */
+    width: 100%; /* Asegurarse de que ocupe todo el ancho de la página */
+    background-color: #16423C; /* Fondo verde del footer */
+    color: #E9EFEC; /* Color de texto claro */
+    padding: 1rem 0; /* Espaciado en la parte superior e inferior */
+    display: flex; /* Usar flexbox para organizar los elementos */
+    justify-content: center; /* Centrar los elementos en el footer */
+    align-items: center; /* Centrar los elementos verticalmente */
+    z-index: 10; /* Asegurarse de que el footer esté encima de otros elementos */
+}
 
+/* Ocultar el footer cuando el dropdown está abierto */
+body.dropdown-open .footer__container {
+    display: none; /* Ocultar el footer cuando el dropdown está abierto */
+}
+
+/* Estilos para la lista de navegación en el footer */
+.footer__navegacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* Espaciado entre los elementos */
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo de los elementos dentro de la lista */
+.footer__elemento {
+    text-align: center; /* Centrar texto en cada elemento */
+}
+
+/* Estilo de los enlaces dentro del footer */
+.footer__enlace {
+    color: #E9EFEC; /* Color de los enlaces en el footer */
+    font-size: 1rem; /* Tamaño de fuente */
+    text-decoration: none; /* Eliminar subrayado de los enlaces */
+    display: flex;
+    flex-direction: column; /* Alinear icono y texto en columna */
+    align-items: center; /* Centrar los iconos y texto */
+    gap: 0.5rem; /* Espaciado entre icono y texto */
+}
+
+/* Estilo de los iconos dentro del footer */
+.footer__enlace i {
+    font-size: 2rem; /* Tamaño del ícono */
+}
+
+/* Estilo de los textos debajo de los iconos */
+.footer__enlace span {
+    font-size: 1rem; /* Tamaño del texto debajo de los iconos */
+}
+
+/* Estilo de los enlaces al pasar el cursor */
+.footer__enlace:hover {
+    color: #1A5319; /* Color al pasar el cursor sobre el enlace */
+    background-color: #D6EFD8; /* Fondo al pasar el cursor */
+    border-radius: 5px; /* Bordes redondeados al pasar el cursor */
+}
 
 
 /* ------------------------------ Sección Presentación ------------------------------*/
