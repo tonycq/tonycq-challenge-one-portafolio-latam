@@ -1,16 +1,20 @@
 :root {
-    --color-de-fondo: #F5F5F5;
-    /* Color de fondo general */
-    --color-de-fondo-menu: #ffffff;
-    /* Color de fondo del menú */
-    --color-de-link: #000000;
-    /* Color de los enlaces */
+    --color-body: #0F0F0F; /* Fondo del cuerpo */
+    --color-dropdown-footer: #232D3F; /* Fondo del dropdown y footer */
+    --color-text: #FFFFFF; /* Texto general */
+    --color-text-alt: #E5E5E5; /* Alternativa para texto (mayor contraste) */
+    --color-icons: #008170; /* Iconos */
+    --color-form-field-bg: #008170; /* Fondo de los campos del formulario */
+    --color-hover-bg: #005B41; /* Fondo al hacer hover */
+    --color-hover-text: #008170; /* Texto al hacer hover */
+    --color-link: #E5E5E5; /* Enlaces */
 }
 
 
 
 body {
-    background-color: var(--color-de-fondo); /* Aplicar color de fondo al cuerpo */
+    background-color: var(--color-body); /* Aplicar color de fondo al cuerpo */
+    color: var(--color-text); /* Texto principal */
     font-family: 'Raleway', sans-serif; /* Fuente utilizada */
     margin: 0;  /* Eliminar márgenes predeterminados */
     box-sizing: border-box; /* Incluir padding y border en el tamaño total de los elementos */
@@ -20,6 +24,65 @@ body {
    
 }
 
+/* Texto accesible */
+p, h1, h2, h3, h4, h5, h6, span {
+    color: var(--color-text);
+}
+
+/* Links */
+a {
+    color: var(--color-link);    /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+a:hover {
+    color: var(--color-hover-text);
+    background-color: var(--color-hover-bg);
+    border-radius: 5px;
+}
+
+/* Dropdown */
+.dropdown-content {
+    background-color: var(--color-dropdown-footer);
+    color: var(--color-text-alt);
+}
+
+/* Footer */
+.footer__container {
+    background-color: var(--color-dropdown-footer);
+    color: var(--color-text-alt);
+}
+
+/* Iconos */
+.footer__enlace i, 
+.navegacion__elemento i {
+    color: var(--color-icons);
+    font-size: 2rem; /* Tamaño general para iconos */
+}
+
+.footer__enlace:hover i,
+.navegacion__elemento a:hover i {
+    color: var(--color-hover-text);
+}
+
+/* Formulario */
+.form-field {
+    background-color: var(--color-form-field-bg);
+    color: var(--color-text);
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-field:focus {
+    outline: 2px solid var(--color-hover-bg);
+}
+
+/* Hover en campos */
+.form-field:hover {
+    background-color: var(--color-hover-bg);
+    color: var(--color-hover-text);
+}
 /* Elimina estilos predeterminados de listas en ol, ul y li */
 ol,
 ul,
@@ -28,13 +91,7 @@ li {
     /* Quitar estilo de lista */
 }
 
-/* Quita el subrayado en los enlaces y asigna el color */
-a {
-    text-decoration: none;
-    /* Sin subrayado */
-    color: var(--color-de-link);
-    /* Color de los enlaces */
-}
+
 
 img {
     max-width: 100%; /* Asegura que las imágenes no se desborden */
@@ -54,7 +111,7 @@ img {
         align-items: center; /* Centra los elementos verticalmente */
         height: 80px; /* Altura de la cabecera */
         padding: 0 1rem; /* Espaciado en los laterales */
-        background-color: var(--color-de-fondo-menu); /* Color de fondo */
+ 
     }
 
      
@@ -79,7 +136,7 @@ img {
         margin-left: auto;/* Mueve el botón hacia la derecha */
     }
 
-}
+
 /* Estilos del contenido del menú desplegable dropdown*/
 .dropdown-content {
     border: none; /* Sin bordes */
@@ -95,7 +152,7 @@ img {
         left: -100vw; /* Inicialmente fuera de la pantalla, usando viewport */
         width: 0; /* Comienza con ancho cero para el efecto */
         height: 100vh; /* Ocupa toda la altura de la pantalla */
-        background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco semitransparente */
+        background-color: var(--color-dropdown-footer); /* Fondo blanco semitransparente */
         overflow-x: hidden; /* Oculta el contenido horizontalmente mientras está oculto */
         transition: left 0.5s ease, width 0.5s ease; /* Animación para que se expanda lateralmente */
         display: flex;
@@ -115,14 +172,14 @@ img {
     height: 100vh; /* Altura total de la ventana */
     margin: 0; /* Eliminar márgenes superiores o inferiores */
     padding: 20px; /* Mantener el espaciado interno */
-      
+   
 }
 
    /* Estilos para los enlaces dentro de la lista de navegación */
     .navegacion__elemento a {
         
         font-size: 1.2rem; /* Aumenta el tamaño del texto */
-        color: #333; /* Cambia el color del texto */
+        --color-text-alt: #E5E5E5; /* Cambia el color del texto */
         width: 100%; /* Abarca todo el ancho del menú desplegable */
         display: flex; /* Usar flexbox para alinear el icono y el texto */
         align-items: center; /* Centrar verticalmente los elementos */
@@ -132,13 +189,7 @@ img {
         line-height: normal; /* Resetea line-height para usar el de flexbox */
         box-sizing: border-box; /* Asegura que padding no afecte el tamaño total */
     }
-    .navegacion__elemento a:hover {
-        color: #1a5319; /* Color del texto al pasar el cursor */
-        background-color: #d6efd8; /* Fondo al pasar el cursor */
-        border-radius: 5px; /* Opcional: bordes redondeados */
-           
-}
-
+ 
 /* Espaciado entre el icono y el nombre (ajustable) */
 .navegacion__elemento i {
     width: 24px; /* Ancho uniforme para todos los iconos */
@@ -223,10 +274,6 @@ body.dropdown-open .footer__container {
     font-size: 2rem; /* Tamaño del ícono */
 }
 
-/* Estilo de los textos debajo de los iconos */
-.footer__enlace span {
-    font-size: 1rem; /* Tamaño del texto debajo de los iconos */
-}
 
 /* Estilo de los enlaces al pasar el cursor */
 .footer__enlace:hover {
@@ -234,6 +281,8 @@ body.dropdown-open .footer__container {
     background-color: #D6EFD8; /* Fondo al pasar el cursor */
     border-radius: 5px; /* Bordes redondeados al pasar el cursor */
 }
+}
+
 
 
 /* ------------------------------ Sección Presentación ------------------------------*/
