@@ -1,13 +1,9 @@
 :root {
-    --color-body: #0F0F0F; /* Fondo del cuerpo */
-    --color-dropdown-footer: #232D3F; /* Fondo del dropdown y footer */
-    --color-text: #FFFFFF; /* Texto general */
-    --color-text-alt: #E5E5E5; /* Alternativa para texto (mayor contraste) */
+    --color-body: #FFFFFF; /* Fondo del cuerpo */
+    --color-dropdown-footer: #FFFFFF; /* Fondo del dropdown y footer */
+    --color-text: #000000; /* Texto general */
     --color-icons: #008170; /* Iconos */
-    --color-form-field-bg: #008170; /* Fondo de los campos del formulario */
-    --color-hover-bg: #005B41; /* Fondo al hacer hover */
-    --color-hover-text: #008170; /* Texto al hacer hover */
-    --color-link: #E5E5E5; /* Enlaces */
+    --color-link: #000000; /* Enlaces */
 }
 
 
@@ -152,7 +148,7 @@ img {
         left: -100vw; /* Inicialmente fuera de la pantalla, usando viewport */
         width: 0; /* Comienza con ancho cero para el efecto */
         height: 100vh; /* Ocupa toda la altura de la pantalla */
-        background-color: var(--color-dropdown-footer); /* Fondo blanco semitransparente */
+        background-color: var(--color-dropdown-footer); /* Fondo blanco  */
         overflow-x: hidden; /* Oculta el contenido horizontalmente mientras está oculto */
         transition: left 0.5s ease, width 0.5s ease; /* Animación para que se expanda lateralmente */
         display: flex;
@@ -179,7 +175,7 @@ img {
     .navegacion__elemento a {
         
         font-size: 1.2rem; /* Aumenta el tamaño del texto */
-        --color-text-alt: #E5E5E5; /* Cambia el color del texto */
+        color: var(--color-link); /*var(--color-link); /* Enlaces */
         width: 100%; /* Abarca todo el ancho del menú desplegable */
         display: flex; /* Usar flexbox para alinear el icono y el texto */
         align-items: center; /* Centrar verticalmente los elementos */
@@ -201,7 +197,6 @@ img {
 /* Estilo compartido entre enlaces de navegacion__elemento a  y el botón salir */
 .navegacion__enlace {
     font-size: 1.2rem; /* Tamaño del texto */
-    color: #333; /* Color del texto */
     padding: 1rem 0; /* Espaciado */
     text-align: left; /* Alineación */
     width: 100%; /* Ocupa todo el ancho */
@@ -216,11 +211,7 @@ img {
     background: none; /* Sin fondo para el botón */
     border: none; /* Sin borde para el botón */
 }
-/* estilo del boton salir para que mantenga similitud con navegacion__elemento a:hover */
-.navegacion__enlace:hover {
-    color: #1a5319; /* Color al pasar el cursor */
-    background-color: #d6efd8; /* Fondo al pasar el cursor */
-}
+
 /* ------------------------------ Sección Footer ------------------------------*/
 
 .footer__container {
@@ -228,18 +219,18 @@ img {
     bottom: 0; /* Alinear al borde inferior de la página */
     left: 0; /* Alinear al borde izquierdo */
     width: 100%; /* Asegurarse de que ocupe todo el ancho de la página */
-    background-color: #16423C; /* Fondo verde del footer */
-    color: #E9EFEC; /* Color de texto claro */
     padding: 1rem 0; /* Espaciado en la parte superior e inferior */
     display: flex; /* Usar flexbox para organizar los elementos */
     justify-content: center; /* Centrar los elementos en el footer */
     align-items: center; /* Centrar los elementos verticalmente */
     z-index: 10; /* Asegurarse de que el footer esté encima de otros elementos */
+    
 }
 
 /* Ocultar el footer cuando el dropdown está abierto */
 body.dropdown-open .footer__container {
     display: none; /* Ocultar el footer cuando el dropdown está abierto */
+   
 }
 
 /* Estilos para la lista de navegación en el footer */
@@ -260,7 +251,7 @@ body.dropdown-open .footer__container {
 
 /* Estilo de los enlaces dentro del footer */
 .footer__enlace {
-    color: #E9EFEC; /* Color de los enlaces en el footer */
+
     font-size: 1rem; /* Tamaño de fuente */
     text-decoration: none; /* Eliminar subrayado de los enlaces */
     display: flex;
@@ -274,16 +265,7 @@ body.dropdown-open .footer__container {
     font-size: 2rem; /* Tamaño del ícono */
 }
 
-
-/* Estilo de los enlaces al pasar el cursor */
-.footer__enlace:hover {
-    color: #1A5319; /* Color al pasar el cursor sobre el enlace */
-    background-color: #D6EFD8; /* Fondo al pasar el cursor */
-    border-radius: 5px; /* Bordes redondeados al pasar el cursor */
 }
-}
-
-
 
 /* ------------------------------ Sección Presentación ------------------------------*/
 
